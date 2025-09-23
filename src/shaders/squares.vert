@@ -1,9 +1,13 @@
 #version 300 es
-  uniform float uPointSize;
-  uniform vec2 uPosition;
+  in float aPointSize;
+  in vec2 aPosition;
+  in vec3 aColor;
+  out vec3 oColor;
+
 
   void main() {
-    gl_Position = vec4(uPosition, 0.0, 1.0); 
-    gl_PointSize = uPointSize;
+    gl_Position = vec4(aPosition, 0.0, 1.0); 
+    gl_PointSize = aPointSize;
+    oColor = aColor;
   }
 
