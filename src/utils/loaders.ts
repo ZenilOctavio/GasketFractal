@@ -2,13 +2,13 @@ type loadWebGL2ContextReturnType = [HTMLCanvasElement, WebGL2RenderingContext, W
 
 
 
-export function loadWebGL2Context(vertexShaderSource: string, fragmentShaderSource: string) : loadWebGL2ContextReturnType {
-  const zero: loadWebGL2ContextReturnType = [undefined,undefined, undefined]
+export function loadWebGL2Context(vertexShaderSource: string, fragmentShaderSource: string): loadWebGL2ContextReturnType {
+  const zero: loadWebGL2ContextReturnType = [undefined, undefined, undefined]
   const canvas = document.querySelector("canvas")
 
   if (!canvas) {
     alert("unable to get canvas")
-    return  zero
+    return zero
   }
 
 
@@ -43,6 +43,7 @@ export function loadWebGL2Context(vertexShaderSource: string, fragmentShaderSour
   gl.linkProgram(program)
 
 
+  //Review if there was an error while linking and logging
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
     console.group()
     console.error(gl.getShaderInfoLog(vertexShader) ?? 'Couldnt get vertex shader info log')

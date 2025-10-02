@@ -1,0 +1,1 @@
+canvas{border:2px solid black;padding:1rem}input[type=range]{position:relative}input[type=range]:after{position:absolute;left:100%;top:50%;content:attr("value")}
